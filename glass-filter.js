@@ -37,7 +37,7 @@ vctx.beginPath();
     });
 
   vctx.closePath();
-//  console.log(color);
+  //console.log(color);
   vctx.strokeStyle = color;
   vctx.fillStyle = color;
   vctx.stroke();
@@ -46,8 +46,8 @@ vctx.beginPath();
 });
 function getPixelDataAt(x,y,width){
   r_index = (x*4)+(width*y*4);
-  g_index = r_index++;
-  b_index = g_index++;
+  g_index = r_index+1;
+  b_index = g_index+1;
   r = img_data.data[r_index];
   g = img_data.data[g_index];
   b = img_data.data[b_index];
