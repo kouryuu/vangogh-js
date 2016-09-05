@@ -1,4 +1,4 @@
-function doThis(){
+function setupCanvas(){
   var image_root = document.getElementById("image_root");
   var canvas = document.createElement("canvas");
   canvas.id = "canvas";
@@ -6,8 +6,6 @@ function doThis(){
   image_canvas.id = "image";
   image_root.appendChild(canvas);
   image_root.appendChild(image_canvas);
-  //var canvas = document.getElementById("canvas");
-  //var image_canvas = document.getElementById("image");
   var image = new Image();
   image.src = 'aish.jpg';
   image.onload = (function(){
@@ -17,7 +15,6 @@ function doThis(){
   canvas.width = image.width;
   canvas.height = image.height;
   var ictx = image_canvas.getContext("2d");
-  //var img = document.getElementById("img");
   var vctx = canvas.getContext("2d"),
       width = canvas.width,
       height = canvas.height;
@@ -54,7 +51,7 @@ function doThis(){
   });
 
 }
-document.onload = doThis();
+document.onload = setupCanvas();
 
 function glassFilter(options){
   var  vctx = options.original_context;
@@ -85,7 +82,6 @@ function glassFilter(options){
         vctx.lineTo(vertex[0],vertex[1]);
       });
     vctx.closePath();
-    //console.log(color);
     vctx.strokeStyle = (typeof(options.strokeColor) !== 'undefined')? options.strokeColor: color;
     vctx.fillStyle = color;
     vctx.stroke();
