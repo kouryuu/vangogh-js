@@ -1,0 +1,47 @@
+#intro-img{
+  background-image: url('pelican.png');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: block;
+
+}
+body {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   background-color: #ECECEA;
+}
+.title{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #558C89;
+}
+#logo{
+  display: flex;
+  margin: auto;
+
+}
+.button{
+  //background-color: #D9853B;
+  background-color: white;
+  padding: 20px;
+  text-decoration: none;
+  color:black;
+  border:1px solid lightgray;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  border-radius: 25px;
+  font-weight: bolder;
+}
+.big{
+  font-size: 1.5em;
+  margin-left: 50px;
+}
+#front-links{
+  margin-top: 50px;
+  text-align: center;
+
+}
