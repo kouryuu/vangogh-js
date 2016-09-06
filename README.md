@@ -1,4 +1,4 @@
-## GLASS FILTER
+## VanGogh JS
 
 I made this algorithm while in college for the Digital Image Processing class, though back then the code
 was in PHP and it was very rough and dirty.
