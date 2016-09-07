@@ -1,3 +1,4 @@
+@media screen and (min-width: 480px) {
 #intro-img{
   background-image: url('pelican.png');
   height: 100%;
@@ -16,8 +17,9 @@ body {
   text-align: center;
   font-size: 40px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: #558C89;
+  letter-spacing: 2px;
 }
 #logo{
   display: flex;
@@ -38,10 +40,44 @@ body {
 }
 .big{
   font-size: 1.5em;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 #front-links{
   margin-top: 50px;
   text-align: center;
 
+}
+.content-left
+{
+  float:left;
+  background-color: white;
+  padding: 2em;
+  border: 1px solid lightgray;
+  margin-left: 10%;
+  border-radius: 25px;
+  width: 500px;
+  height: 300px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  margin-right: 11px;
+}
+
+.content-right
+{
+  text-transform: uppercase;
+  background-color: white;
+  text-align: center;
+padding-top: 5em;
+ border: 1px solid lightgray;
+ margin-left: 10%;
+  width: 500px;
+  height: 300px;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  overflow: scroll;
+}
+#demo-page{
+  height: 100%;
+  width: 100%;
+}
 }
