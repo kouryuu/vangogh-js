@@ -1,9 +1,10 @@
 function loadImage(){
-  console.log('changed');
+  cleanUp();
   window.URL = window.URL || window.webkitURL;
   var upload = document.getElementById('upload');
   var reader = new FileReader();
   reader.onload = (function(){
+    document.getElementById('image_message').innerHTML = "Processing image ...";
     var img_src = reader.result;
     //console.log(img_src);
     setupCanvas(img_src);
@@ -57,8 +58,35 @@ function setupCanvas(img_src){
         number_of_points: n_points
       }
     );
-    console.log('done');
+    placeProcessedImage();
   });
 
 }
 document.onload = setupCanvas();
+function placeProcessedImage(){
+  canvas = document.getElementById('canvas');
+  var img_data = canvas.toDataURL();
+  display = document.getElementById('image_display');
+  var old_image = document.getElementById('image_processed');
+  console.log(old_image);
+  if(old_image != null){
+    display.removeChild(old_image);
+  }
+  var image = document.createElement("img");
+  image.src = img_data;
+  image.height = 300;
+  image.width = 300;
+  image.id= 'image_processed';
+  var link = document.createElement("a");
+  link.href = img_data;
+  link.target = 'blank';
+  link.style = 'text-decoration: none;color:black;';
+  display.appendChild(link);
+  link.innerHTML = "Click or tap to view full image";
+  link.appendChild(image);
+  document.getElementById('image_message').innerHTML = "";
+}
+function cleanUp(){
+  var image_root = document.getElementById("image_root");
+  image_root.innerHTML ="";
+}

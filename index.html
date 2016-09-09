@@ -16,22 +16,27 @@ We are building a mobile-friendly interface, please use a desktop computer for a
   <div class="title">Try out VanGogh JS</div>
     <div class="content-left">
     <p> If you wish to try the project you can either include it to your own website like this:
-
+    <p>
+      <pre><code class="html">
+        &#x3C;script src=&#x22;glassFilter.js&#x22;&#x3E;&#x3C;/script&#x3E;
+      </code></pre>
+      <small>Read the documentation for details how to use.</small>
       <p>Or <strong>upload your image here</strong> to see how it works
       <p>  <input type="file" id="upload" onchange="loadImage()"/>
       <p><label for="n_points">Qty of points: </label><input type="text" id="n_points" placeholder="3000"/>
 
-      <p><label for="stroke_color">Stroke color: </label><input type="color" id="stroke_color" />
+      <p><label for="stroke_color">Stroke color: </label><input type="color" id="stroke_color" placeholder="black"/>
         <label for="transparent">Transparent </label><input type="checkbox" id="transparent">
     </div>
 
     <div class="content-right">
-      No image has been uploaded.
-
+    <div id="image_message">  No image has been uploaded.</div>
+<div id="image_root" hidden></div>
+<div id="image_display"></div>
     </div>
-      <div id="image_root" hidden></div>
+
       </div>
-      <script src="./node_modules/d3-voronoi/build/d3-voronoi.js"></script>
+      <!-- <script src="./node_modules/d3-voronoi/build/d3-voronoi.js"></script> -->
       <script src="glass-filter.js"></script>
       <script src="fileReader.js"></script>
       <script>
