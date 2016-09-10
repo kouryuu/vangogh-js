@@ -1,4 +1,4 @@
-<centered><img src="vangoghjs_logo.png" /></centered
+<centered><img src="vangoghjs_logo.png" /></centered>
 
 I made this algorithm while in college for the Digital Image Processing class, though back then the code
 was in PHP and it was very rough and dirty.
