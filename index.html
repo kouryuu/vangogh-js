@@ -22,11 +22,13 @@ We are building a mobile-friendly interface, please use a desktop computer for a
       </code></pre>
       <small>Read the documentation for details how to use.</small>
       <p>Or <strong>upload your image here</strong> to see how it works
-      <p>  <input type="file" id="upload" onchange="loadImage()"/>
-      <p><label for="n_points">Qty of points: </label><input type="text" id="n_points" placeholder="3000"/>
+      <p>  <input type="file" id="upload" />
+      <p><label for="n_points">Qty of points: </label><input onchange="document.getElementById('n_points_out').innerHTML = this.value" type="range" id="n_points" value="1000" min="1000" max="50000" placeholder="3000"/><span id="n_points_out">1000</span>
 
       <p><label for="stroke_color">Stroke color: </label><input type="color" id="stroke_color" placeholder="black"/>
         <label for="transparent">Transparent </label><input type="checkbox" id="transparent">
+      <p>
+        <button onclick="loadImage()" >Apply</button>
     </div>
 
     <div class="content-right">

@@ -1,12 +1,13 @@
 function loadImage(){
   cleanUp();
+
   window.URL = window.URL || window.webkitURL;
   var upload = document.getElementById('upload');
   var reader = new FileReader();
   reader.onload = (function(){
     document.getElementById('image_message').innerHTML = "Processing image ...";
     var img_src = reader.result;
-    //console.log(img_src);
+    console.log('done');
     setupCanvas(img_src);
   });
   reader.readAsDataURL(upload.files[0]);
@@ -45,19 +46,24 @@ function setupCanvas(img_src){
     b = img_data.data[b_index];
     return [r,g,b];
   });
-  n_points = 30000
-    glassFilter(
-      {original_context: vctx,
-        image_context: ictx,
-        original_canvas: canvas,
-        image_canvas: image_canvas,
-        width: width,
-        height: height,
-        image_data: img_data,
-        getPixelDataFunc: getPixelDataAt,
-        number_of_points: n_points
-      }
-    );
+
+  n_points = document.getElementById('n_points').value;
+  var filter_options = {
+    original_context: vctx,
+    image_context: ictx,
+    original_canvas: canvas,
+    image_canvas: image_canvas,
+    width: width,
+    height: height,
+    image_data: img_data,
+    getPixelDataFunc: getPixelDataAt,
+    number_of_points: n_points
+  };
+  if(!document.getElementById('transparent').checked){
+    filter_options['strokeColor'] = document.getElementById('stroke_color').value;
+  }
+
+    glassFilter(filter_options);
     placeProcessedImage();
   });
 
@@ -67,8 +73,7 @@ function placeProcessedImage(){
   canvas = document.getElementById('canvas');
   var img_data = canvas.toDataURL();
   display = document.getElementById('image_display');
-  var old_image = document.getElementById('image_processed');
-  console.log(old_image);
+  var old_image = document.getElementById('link_image_processed');
   if(old_image != null){
     display.removeChild(old_image);
   }
@@ -79,6 +84,7 @@ function placeProcessedImage(){
   image.id= 'image_processed';
   var link = document.createElement("a");
   link.href = img_data;
+  link.id = 'link_image_processed';
   link.target = 'blank';
   link.style = 'text-decoration: none;color:black;';
   display.appendChild(link);
