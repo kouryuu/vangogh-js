@@ -1,7 +1,8 @@
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 667px) {
   #no-mobile{
     display: none;
   }
+}
 #intro-img{
   background-image: url('pelican.png');
   height: 100%;
@@ -84,10 +85,11 @@ padding-top: 5em;
   height: 100%;
   width: 100%;
 }
-}
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 667px) {
   #no-mobile{
     background-color: pink;
     border: 1px solid red;
+    padding: 10px;
   }
 }
