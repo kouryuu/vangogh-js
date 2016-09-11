@@ -1,6 +1,7 @@
 <html>
   <head><title>VanGogh JS </title></head>
   <link href="styling.css" rel="stylesheet" />
+  <link href="./node_modules/highlight.js/styles/xcode.css" rel="stylesheet" />
 <body>
 <div id="no-mobile">
   <h1> Heads up!</h1>
@@ -17,9 +18,7 @@ We are building a mobile-friendly interface, please use a desktop computer for a
     <div class="content-left">
     <p> If you wish to try the project you can either include it to your own website like this:
     <p>
-      <pre><code class="html">
-        &#x3C;script src=&#x22;glassFilter.js&#x22;&#x3E;&#x3C;/script&#x3E;
-      </code></pre>
+      <pre><code class="html">&#x3C;script src=&#x22;glassFilter.js&#x22;&#x3E;&#x3C;/script&#x3E;</code></pre>
       <small>Read the documentation for details how to use.</small>
       <p>Or <strong>upload your image here</strong> to see how it works
       <p>  <input type="file" id="upload" />
@@ -51,6 +50,10 @@ We are building a mobile-friendly interface, please use a desktop computer for a
   ga('send', 'pageview');
 
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/html.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 
 </html>
