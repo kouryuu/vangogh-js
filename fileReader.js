@@ -1,17 +1,14 @@
 function loadImage(){
   cleanUp();
-
   window.URL = window.URL || window.webkitURL;
   var upload = document.getElementById('upload');
   var reader = new FileReader();
   reader.onload = (function(){
     document.getElementById('image_message').innerHTML = "Processing image ...";
     var img_src = reader.result;
-    console.log('done');
     setupCanvas(img_src);
   });
   reader.readAsDataURL(upload.files[0]);
-
 }
 function setupCanvas(img_src){
   if(typeof(img_src) == 'undefined')
@@ -71,7 +68,8 @@ function setupCanvas(img_src){
 document.onload = setupCanvas();
 function placeProcessedImage(){
   canvas = document.getElementById('canvas');
-  var img_data = canvas.toDataURL();
+  var blobbed_image = canvas.toBlob(function(blob){
+  var img_data = URL.createObjectURL(blob);
   display = document.getElementById('image_display');
   var old_image = document.getElementById('link_image_processed');
   if(old_image != null){
@@ -91,6 +89,7 @@ function placeProcessedImage(){
   link.innerHTML = "Click or tap to view full image";
   link.appendChild(image);
   document.getElementById('image_message').innerHTML = "";
+  });
 }
 function cleanUp(){
   var image_root = document.getElementById("image_root");
