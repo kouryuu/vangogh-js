@@ -81,11 +81,28 @@ padding-top: 5em;
   overflow: hidden;
 
 }
+.content-full
+{
+  background-color: white;
+  padding: 2em;
+  border: 1px solid lightgray;
+  margin-left: 10%;
+  border-radius: 25px;
+  width: 70%;
+  height: 400px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  margin-right: 11px;
+}
 #demo-page{
   height: 100%;
   width: 100%;
 }
 
+#documentation{
+  height: 100%;
+  width: 100%;
+}
 @media screen and (max-width: 667px) {
   #no-mobile{
     background-color: pink;
